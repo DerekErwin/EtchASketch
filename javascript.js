@@ -1,4 +1,7 @@
-let drawingBoard = document.getElementById('drawingBoard')
+let drawingBoard = document.getElementById('drawingBoard');
+let gridBtn = document.getElementById('gridBtn');
+let gridQuantity = document.getElementById('gridQuantity');
+let gridQtyBtn = document.getElementById('gridQtyBtn');
 
 function createGrid (size) {
     // let pixels = document.querySelectorAll(".pixel");
@@ -15,5 +18,19 @@ function createGrid (size) {
         drawingBoard.appendChild(pixel);
     }
 }
+
+gridBtn.addEventListener('click', () => {
+    if (drawingBoard.classList.contains('grid')){
+        drawingBoard.classList.remove('grid');
+    }else{
+        drawingBoard.classList.add('grid');
+    }
+});
+
+gridQtyBtn.addEventListener('click', () => {
+    createGrid(gridQuantity.value);
+});
+
+
 
 createGrid(5);
