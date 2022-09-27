@@ -12,7 +12,7 @@ function createGrid (size) {
         const pixel = document.createElement('div');
         pixel.classList.add('pixel');
         pixel.addEventListener('mouseover', (e) => {
-            let randomColor = Math.floor(Math.random()*16777215).toString(16);
+            let randomColor = Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
             e.target.style.background = "#" + randomColor;
         });
         drawingBoard.appendChild(pixel);
